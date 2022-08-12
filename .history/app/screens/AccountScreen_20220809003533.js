@@ -26,13 +26,13 @@ function AccountScreen(props) {
   return (
     <Screen style={styles.screen}>
     {/* <Text>Hello</Text> */}
-      <View style={styles.container}>
+      {/* <View style={styles.container}>
         <ListItem
           title="Kaniz Fatema"
           subTitle="kaniz.fatema@gmail.com"
           image={require("../assets/starlights.jpg")}
         />
-      </View>
+      </View> */}
       <View style={styles.container}>
         <FlatList
           data={menuItems}
@@ -51,10 +51,10 @@ function AccountScreen(props) {
           )}
         />
       </View>
-      <ListItem
+      {/* <ListItem
         title="Log Out"
         IconComponent={<Icon name="logout" backgroundColor="#ffe66d" />}
-      />
+      /> */}
     </Screen>
   );
 }

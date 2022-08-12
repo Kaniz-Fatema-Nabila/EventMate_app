@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View, FlatList, Text } from "react-native";
+import { StyleSheet, View, FlatList } from "react-native";
 import ListItem from "../components/ListItem";
 import ListItemSeparator from "../components/ListItemSeparator";
 import Icon from "../components/Icon";
@@ -25,7 +25,6 @@ const menuItems = [
 function AccountScreen(props) {
   return (
     <Screen style={styles.screen}>
-    {/* <Text>Hello</Text> */}
       <View style={styles.container}>
         <ListItem
           title="Kaniz Fatema"

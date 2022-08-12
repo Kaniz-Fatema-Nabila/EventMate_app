@@ -13,10 +13,8 @@ import Screen from "../components/Screen";
 import SubmitButton from "../components/SubmitButton";
 import AppFormField from "../components/AppFormField";
 import { Formik } from "formik";
-import axios from "axios";
 import AppButton from "../components/AppButton";
 // import { NavigationActions } from "react-navigation";
-
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().required().email().label("Email"),
@@ -25,14 +23,11 @@ const validationSchema = Yup.object().shape({
 
 async function login (){
   try {
-    console.log("in")
-    
     // const response = await axios.get('https://jsonplaceholder.typicode.com/todos/1', {
-    const response = await axios.post('http://192.168.0.104:8000/api/login' ,{
-      email:"mahirpunna@gmail.com",
+    const response = await axios.post('http://10.0.2.2:8000/api/login', {
+      email:"m@g.com",
       password:"z",
-    }
-    );
+    });
     // if (response.status === 201) {
     //   alert(` You have created: ${JSON.stringify(response.data)}`);
     // } else {
@@ -42,7 +37,6 @@ async function login (){
     console.log(response.data)
   } catch (error) {
     alert("An error has occurred");
-    console.log(error)
   // YellowBox.ignoreWarnings(['Warning: ...']);
   }
   // try {

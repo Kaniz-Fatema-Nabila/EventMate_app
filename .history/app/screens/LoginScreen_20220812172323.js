@@ -16,7 +16,7 @@ import { Formik } from "formik";
 import axios from "axios";
 import AppButton from "../components/AppButton";
 // import { NavigationActions } from "react-navigation";
-
+import publicIP from 'react-native-public-ip';
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().required().email().label("Email"),
@@ -26,12 +26,21 @@ const validationSchema = Yup.object().shape({
 async function login (){
   try {
     console.log("in")
-    
+    publicIP()
+.then(ip => {    
+  console.log(ip);
+  // '47.122.71.234'
+})
+.catch(error => {
+  console.log(error);
+  // 'Unable to get IP address.'
+});
     // const response = await axios.get('https://jsonplaceholder.typicode.com/todos/1', {
-    const response = await axios.post('http://192.168.0.104:8000/api/login' ,{
-      email:"mahirpunna@gmail.com",
-      password:"z",
-    }
+    const response = await axios.get('http://localhost:3000/api/checkapi' 
+    // ,{
+    //   email:"mahirpunna@gmail.com",
+    //   password:"z",
+    // }
     );
     // if (response.status === 201) {
     //   alert(` You have created: ${JSON.stringify(response.data)}`);
@@ -39,7 +48,7 @@ async function login (){
 
     //   throw new Error("An error has occurred");
     // }
-    console.log(response.data)
+    console.log("ok")
   } catch (error) {
     alert("An error has occurred");
     console.log(error)

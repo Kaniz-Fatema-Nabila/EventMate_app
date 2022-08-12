@@ -39,7 +39,7 @@ async function login (){
 
     //   throw new Error("An error has occurred");
     // }
-    console.log(response.data)
+    console.log(response)
   } catch (error) {
     alert("An error has occurred");
     console.log(error)

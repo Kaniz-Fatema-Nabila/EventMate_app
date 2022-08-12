@@ -17,7 +17,6 @@ import axios from "axios";
 import AppButton from "../components/AppButton";
 // import { NavigationActions } from "react-navigation";
 
-
 const validationSchema = Yup.object().shape({
   email: Yup.string().required().email().label("Email"),
   password: Yup.string().required().min(4).label("Password"),
@@ -26,12 +25,19 @@ const validationSchema = Yup.object().shape({
 async function login (){
   try {
     console.log("in")
-    
+    // require module
+var NetworkInfo = require('react-native-network-info');
+
+// Get Local IP
+NetworkInfo.getIPAddress(ip => {
+  console.log(ip);
+});
     // const response = await axios.get('https://jsonplaceholder.typicode.com/todos/1', {
-    const response = await axios.post('http://192.168.0.104:8000/api/login' ,{
-      email:"mahirpunna@gmail.com",
-      password:"z",
-    }
+    const response = await axios.get('http://localhost:3000/api/checkapi' 
+    // ,{
+    //   email:"mahirpunna@gmail.com",
+    //   password:"z",
+    // }
     );
     // if (response.status === 201) {
     //   alert(` You have created: ${JSON.stringify(response.data)}`);
@@ -39,7 +45,7 @@ async function login (){
 
     //   throw new Error("An error has occurred");
     // }
-    console.log(response.data)
+    console.log("ok")
   } catch (error) {
     alert("An error has occurred");
     console.log(error)

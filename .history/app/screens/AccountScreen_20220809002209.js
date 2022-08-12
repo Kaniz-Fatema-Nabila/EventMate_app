@@ -33,7 +33,7 @@ function AccountScreen(props) {
           image={require("../assets/starlights.jpg")}
         />
       </View>
-      <View style={styles.container}>
+      {/* <View style={styles.container}>
         <FlatList
           data={menuItems}
           keyExtractor={(menuItem) => menuItem.title}
@@ -54,7 +54,7 @@ function AccountScreen(props) {
       <ListItem
         title="Log Out"
         IconComponent={<Icon name="logout" backgroundColor="#ffe66d" />}
-      />
+      /> */}
     </Screen>
   );
 }

@@ -6,16 +6,16 @@ import ListItem from "./ListItem";
 function ListingDetailsScreen(props) {
     return(
         <View>
-            <Image style={styles.image} source={require('../assets/bg2.jpg')}/>
+            <Image style={styles.image} source={require('../assets/')}/>
             
             <View style={styles.detailsContainer}>
                 <AppText style={styles.title}> </AppText>
                 <AppText style={styles.subTitle}> </AppText>
                 <View style={styles.userContainer}>
                     <ListItem
-                    image={require("../assets/bg2.jpg")}
-                    title="Kaniz Fatema"
-                    subTitle="5 Listings"
+                    image={require("../assets/")}
+                    title=" "
+                    subTitle=" "
                 />
                 </View>
                 
@@ -35,7 +35,7 @@ const styles=StyleSheet.create({
     },
     title: {
         fontSize:24,
-        fontWeight: "500"
+        fontWeight: 500
     },
     subTitle:{
         color: 'fff000',

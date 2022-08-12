@@ -15,7 +15,6 @@ import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import AuthNavigator from "./app/Navigation/AuthNavigator";
 import Screen from "./app/components/Screen";
-import ListingDetailsScreen from "./app/components/ListingDetailsScreen";
 // export default function App() {
 //   //return <WelcomeScreen />;
 //   //return <LoginScreen />;
@@ -87,10 +86,9 @@ import ListingDetailsScreen from "./app/components/ListingDetailsScreen";
 
 export default function App() {
   return (
-    // <AccountScreen />
-    // <ListingDetailsScreen/>
-    <NavigationContainer>
-      <AuthNavigator />
-    </NavigationContainer>
+    <AccountScreen />
+    // <NavigationContainer>
+    //   <AuthNavigator />
+    // </NavigationContainer>
   );
 }

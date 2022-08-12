@@ -25,8 +25,8 @@ const menuItems = [
 function AccountScreen(props) {
   return (
     <Screen style={styles.screen}>
-    {/* <Text>Hello</Text> */}
-      <View style={styles.container}>
+<Text>Hello</Text>
+      {/* <View style={styles.container}>
         <ListItem
           title="Kaniz Fatema"
           subTitle="kaniz.fatema@gmail.com"
@@ -54,7 +54,7 @@ function AccountScreen(props) {
       <ListItem
         title="Log Out"
         IconComponent={<Icon name="logout" backgroundColor="#ffe66d" />}
-      />
+      /> */}
     </Screen>
   );
 }

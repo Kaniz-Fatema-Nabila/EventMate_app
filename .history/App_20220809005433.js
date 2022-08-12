@@ -87,10 +87,10 @@ import ListingDetailsScreen from "./app/components/ListingDetailsScreen";
 
 export default function App() {
   return (
-    // <AccountScreen />
+    <AccountScreen />
     // <ListingDetailsScreen/>
-    <NavigationContainer>
-      <AuthNavigator />
-    </NavigationContainer>
+    // <NavigationContainer>
+    //   <AuthNavigator />
+    // </NavigationContainer>
   );
 }
