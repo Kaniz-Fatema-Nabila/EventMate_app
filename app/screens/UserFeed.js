@@ -1,23 +1,28 @@
 import React from "react";
 import { ImageBackground, StyleSheet, View, Image, Text } from "react-native";
 import AppButton from "../components/AppButton";
+import AppNavigator from "../Navigation/AppNavigator";
 
-function Feed({props, navigation}) {
+function UserFeed({ props, navigation }) {
   return (
     <ImageBackground
       blurRadius={10}
       style={styles.background}
       source={require("../assets/bg2.jpg")}
     >
-    <Text style={styles.heading}>[User Feed] </Text>
+      <Text style={styles.heading}>[User Feed] </Text>
 
       <View style={styles.buttonsContainer}>
-        <AppButton title="Create an Event" onPress={() => navigation.navigate("CreateEvent")} />
+        <AppButton
+          title="Create an Event"
+          onPress={() => navigation.navigate("CreateEvent")}
+        />
         <AppButton
           title="Register A Vendor"
           onPress={() => navigation.navigate("VendorRegistration")}
         />
       </View>
+      <AppNavigator />
     </ImageBackground>
   );
 }
@@ -33,13 +38,13 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   heading: {
-    fontStyle: 'normal',
+    fontStyle: "normal",
     fontSize: 25,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     textAlignVertical: "top",
     textAlign: "center",
-    color: "#000"
-},
+    color: "#000",
+  },
 });
 
-export default Feed;
+export default UserFeed;

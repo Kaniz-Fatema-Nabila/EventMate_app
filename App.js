@@ -14,8 +14,11 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import AuthNavigator from "./app/Navigation/AuthNavigator";
+import AppNavigator from "./app/Navigation/AppNavigator";
 import Screen from "./app/components/Screen";
-import ListingDetailsScreen from "./app/components/ListingDetailsScreen";
+import ListingDetailsScreen from "./app/screens/ListingDetailsScreen";
+import MessagesScreen from "./app/screens/MessagesScreen";
+import NavigationTheme from "./app/Navigation/NavigationTheme";
 // export default function App() {
 //   //return <WelcomeScreen />;
 //   //return <LoginScreen />;
@@ -87,10 +90,8 @@ import ListingDetailsScreen from "./app/components/ListingDetailsScreen";
 
 export default function App() {
   return (
-    // <AccountScreen />
-    // <ListingDetailsScreen/>
-    <NavigationContainer>
-      <AuthNavigator />
+    <NavigationContainer theme={NavigationTheme}>
+      <AppNavigator />
     </NavigationContainer>
   );
 }

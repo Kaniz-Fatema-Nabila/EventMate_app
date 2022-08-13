@@ -5,17 +5,23 @@ import AppButton from "../components/AppButton";
 function WelcomeScreen({ navigation }) {
   return (
     <ImageBackground
-      blurRadius={10}
+      blurRadius={3}
       style={styles.background}
-      source={require("../assets/background.jpg")}
+      source={require("../assets/cute-lights.jpg")}
     >
-      <Text style={styles.heading}>EventMate</Text>
+      <View style={styles.logoContainer}>
+        <Image
+          style={styles.logo}
+          source={require("../assets/adaptive-icon.png")}
+        />
+        <Text style={styles.heading}>EventMate</Text>
+      </View>
 
       <View style={styles.buttonsContainer}>
         <AppButton title="Login" onPress={() => navigation.navigate("Login")} />
         <AppButton
-          title="Register"
-          onPress={() => navigation.navigate("Register")}
+          title="Sign Up"
+          onPress={() => navigation.navigate("Sign Up")}
         />
       </View>
     </ImageBackground>
@@ -25,21 +31,29 @@ function WelcomeScreen({ navigation }) {
 const styles = StyleSheet.create({
   background: {
     flex: 1,
-    justifyContent: "center",
+    justifyContent: "flex-end",
     alignItems: "center",
   },
   buttonsContainer: {
     padding: 20,
     width: "100%",
+    justifyContent: "flex-end",
   },
   heading: {
-    fontStyle: 'normal',
-    fontSize: 50,
-    fontWeight: 'bold',
-    textAlignVertical: "top",
-    textAlign: "center",
-    color: "#fff"
-},
+    color: "#fff",
+    fontSize: 25,
+    fontWeight: "600",
+    paddingVertical: 20,
+  },
+  logo: {
+    width: 100,
+    height: 100,
+  },
+  logoContainer: {
+    position: "absolute",
+    top: 70,
+    alignItems: "center",
+  },
 });
 
 export default WelcomeScreen;

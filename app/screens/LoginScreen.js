@@ -6,7 +6,7 @@ import {
   ImageBackground,
   TouchableHighlight,
   YellowBox,
-  Button, 
+  Button,
 } from "react-native";
 import * as Yup from "yup";
 import Screen from "../components/Screen";
@@ -17,43 +17,25 @@ import axios from "axios";
 import AppButton from "../components/AppButton";
 // import { NavigationActions } from "react-navigation";
 
-
 const validationSchema = Yup.object().shape({
   email: Yup.string().required().email().label("Email"),
   password: Yup.string().required().min(4).label("Password"),
 });
 
-async function login (){
+async function login() {
   try {
-    console.log("in")
-    
-    // const response = await axios.get('https://jsonplaceholder.typicode.com/todos/1', {
-    const response = await axios.post('http://192.168.0.104:8000/api/login' ,{
-      email:"mahirpunna@gmail.com",
-      password:"z",
-    }
-    );
-    // if (response.status === 201) {
-    //   alert(` You have created: ${JSON.stringify(response.data)}`);
-    // } else {
+    console.log("in");
 
-    //   throw new Error("An error has occurred");
-    // }
-    console.log(response.data)
+    const response = await axios.post("http://192.168.0.105:8000/api/login", {
+      email: "mr@g.com",
+      password: "zzzzzzz",
+    });
+    console.log(response.data);
   } catch (error) {
     alert("An error has occurred");
-    console.log(error)
-  // YellowBox.ignoreWarnings(['Warning: ...']);
+    console.log(error);
+    // YellowBox.ignoreWarnings(['Warning: ...']);
   }
-  // try {
-  //   const response = await axios.get('https://jsonplaceholder.typicode.com/todos/1', { cancelToken: source.token });
-    
-  //     alert(` You have created: ${JSON.stringify(response.data)}`);
-    
-  // } catch (error) {
-  //   alert("An error has occurred");
-  // YellowBox.ignoreWarnings(['Warning: ...']);
-  // }
 }
 
 const onSubmitFormHandler = async (event) => {
@@ -70,8 +52,8 @@ const onSubmitFormHandler = async (event) => {
     if (response.status === 201) {
       alert(` You have created: ${JSON.stringify(response.data)}`);
       setIsLoading(false);
-      setFullName('');
-      setEmail('');
+      setFullName("");
+      setEmail("");
     } else {
       throw new Error("An error has occurred");
     }
@@ -80,65 +62,64 @@ const onSubmitFormHandler = async (event) => {
     setIsLoading(false);
   }
 };
-function LoginScreen({props, navigation}) {
-// function LoginScreen({ navigation }) {
+function LoginScreen({ props, navigation }) {
+  // function LoginScreen({ navigation }) {
   return (
-    <ImageBackground
-      style={styles.background}
-      source={require("../assets/cute-lights.jpg")}
-    >
-      <Text style={styles.text}> </Text>
+    // <ImageBackground
+    //   style={styles.background}
+    //   source={require("../assets/cute-lights.jpg")}
+    // >
 
-      <Screen style={styles.container}>
-        <Formik
-          initialValues={{ email: " ", password: " " }}
-          onSubmit={(values) => console.log(values)}
-          validationSchema={validationSchema}
-        >
-          {() => (
-            <>
-              <AppFormField
-                autoCapitalize="none"
-                icon="email"
-                name="email"
-                placeholder="Email"
-              />
-              {/* <ErrorMessage error={errors.email} visible={touched.email}/> */}
-              <AppFormField
-                autoCapitalize="none"
-                icon="lock"
-                //onBlur={()=> setFieldTouched("password")}
-                //onChangeText={handleChange("password")}
-                name="password"
-                placeholder="Password"
-                secureTextEntry
-                textContentType="password"
-              />
-              {/* <ErrorMessage error={errors.password} visible={touched.password}/> */}
-              <Button
-                onPress={() => {
-                  login();
-                }}
-                title="Testing API"
-              />
-              <SubmitButton title="Login" />
-              <Button title="Login tem" onPress={() => navigation.navigate("Feed")} />
-              
+    <Screen style={styles.container}>
+      {/* <Text style={styles.text}> </Text> */}
+      <Formik
+        initialValues={{ email: " ", password: " " }}
+        onSubmit={(values) => console.log(values)}
+        validationSchema={validationSchema}
+      >
+        {() => (
+          <>
+            <AppFormField
+              autoCapitalize="none"
+              icon="email"
+              name="email"
+              placeholder="Email"
+            />
+            {/* <ErrorMessage error={errors.email} visible={touched.email}/> */}
+            <AppFormField
+              autoCapitalize="none"
+              icon="lock"
+              //onBlur={()=> setFieldTouched("password")}
+              //onChangeText={handleChange("password")}
+              name="password"
+              placeholder="Password"
+              secureTextEntry
+              textContentType="password"
+            />
+            {/* <ErrorMessage error={errors.password} visible={touched.password}/> */}
+            <Button
+              onPress={() => {
+                login();
+              }}
+              title="Testing API"
+            />
+            <SubmitButton title="Login" />
+            <Button
+              title="Login tem"
+              onPress={() => navigation.navigate("UserFeed")}
+            />
 
-  
-              
-
-              <TouchableHighlight
-                style={styles.buttonContainer}
-                onPress={() => this.onClickListener("restore_password")}
-              >
-                <Text>Forgot your password?</Text>
-              </TouchableHighlight>
-            </>
-          )}
-        </Formik>
-      </Screen>
-    </ImageBackground>
+            <TouchableHighlight
+              style={styles.buttonContainer}
+              onPress={() => this.onClickListener("restore_password")}
+            >
+              <Text>Forgot your password?</Text>
+            </TouchableHighlight>
+          </>
+        )}
+      </Formik>
+    </Screen>
+    // </ImageBackground>
   );
 }
 const styles = StyleSheet.create({
@@ -148,7 +129,6 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     height: 50,
-    color: "#fff",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
@@ -156,11 +136,11 @@ const styles = StyleSheet.create({
     borderRadius: 30,
   },
   container: {
-    padding: 20,
+    padding: 30,
     width: "100%",
-    justifyContent: "flex-end",
+    justifyContent: "center",
+    backgroundColor: "#FFFFFF",
   },
-
   text: {
     fontStyle: "normal",
     fontSize: 20,
