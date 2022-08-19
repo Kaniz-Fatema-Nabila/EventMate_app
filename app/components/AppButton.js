@@ -10,11 +10,6 @@ function AppButton({ title, onPress }) {
   );
 }
 
-
-
-
-
-
 const styles = StyleSheet.create({
   button: {
     backgroundColor: "#FFA500",

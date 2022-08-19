@@ -5,7 +5,7 @@ import AppButton from "../components/AppButton.js";
 import { ListItem } from "../components/ListItem.js";
 import { getProducts } from "../components/ProductList.js";
 import ListItemSeparator from "../components/ListItemSeparator.js";
-export function ListingScreen({ navigation }) {
+export function Photography({ navigation }) {
   function renderProduct({ item: product }) {
     return (
       <ListItem
@@ -34,16 +34,10 @@ export function ListingScreen({ navigation }) {
         renderItem={renderProduct}
       />
 
-      {/* <View style={styles.buttonsContainer}>
-          <AppButton
-            title="Order"
-            onPress={() => navigation.navigate("Feed")}
-          /> 
-        </View> */}
       <ListItemSeparator />
-      <View style={styles.buttonsContainer}>
+      {/* <View style={styles.buttonsContainer}>
         <AppButton title="Order" onPress={() => navigation.navigate("Feed")} />
-      </View>
+      </View> */}
     </Screen>
   );
 }
@@ -54,13 +48,13 @@ const styles = StyleSheet.create({
     //marginVertical: 10,
   },
   container: {
-    backgroundColor: "#eeeeee",
+    backgroundColor: "#fff",
   },
   listings: {
-    backgroundColor: "#eeeeee",
+    backgroundColor: "#fff",
   },
   productsListContainer: {
-    //backgroundColor: "#FFA500",
+    backgroundColor: "#FFA500",
     paddingVertical: 8,
     marginHorizontal: 8,
   },
