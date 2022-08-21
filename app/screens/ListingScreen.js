@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, FlatList, ScrollView, StyleSheet } from "react-native";
+import { View, FlatList, RefreshControl, StyleSheet } from "react-native";
 import Screen from "../components/Screen.js";
 import AppButton from "../components/AppButton.js";
 import { ListItem } from "../components/ListItem.js";
@@ -25,6 +25,15 @@ export function ListingScreen({ navigation }) {
     setProducts(getProducts());
   });
 
+  const [refresh, setRefresh] = useState(false);
+  const pullMe = () => {
+    setRefresh(true);
+
+    setTimeout(() => {
+      setRefresh(false);
+    }, 2000);
+  };
+
   return (
     <Screen style={styles.container}>
       <FlatList
@@ -32,6 +41,9 @@ export function ListingScreen({ navigation }) {
         keyExtractor={(item) => item.id.toString()}
         data={products}
         renderItem={renderProduct}
+        refreshControl={
+          <RefreshControl refreshing={refresh} onRefresh={() => pullMe()} />
+        }
       />
 
       {/* <View style={styles.buttonsContainer}>

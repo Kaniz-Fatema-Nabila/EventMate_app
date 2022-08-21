@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, FlatList, StyleSheet } from "react-native";
+import { View, Text, FlatList, RefreshControl, StyleSheet } from "react-native";
 import { NewsFeed } from "../components/NewsFeed";
 import { getFeedFields } from "../components/NewsFeedField.js";
 export function NewsFeedScreen(props) {
@@ -12,6 +12,15 @@ export function NewsFeedScreen(props) {
     setFeedFields(getFeedFields());
   });
 
+  const [refresh, setRefresh] = useState(false);
+  const pullMe = () => {
+    setRefresh(true);
+
+    setTimeout(() => {
+      setRefresh(false);
+    }, 2000);
+  };
+
   return (
     <FlatList
       style={styles.newsFeedList}
@@ -19,6 +28,9 @@ export function NewsFeedScreen(props) {
       keyExtractor={(item) => item.id.toString()}
       data={feedfields}
       renderItem={renderNewsFeed}
+      refreshControl={
+        <RefreshControl refreshing={refresh} onRefresh={() => pullMe()} />
+      }
     />
   );
 }

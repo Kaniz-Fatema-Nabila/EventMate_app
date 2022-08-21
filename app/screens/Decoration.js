@@ -1,37 +1,49 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, FlatList, ScrollView, StyleSheet } from "react-native";
+import { View, FlatList, RefreshControl, StyleSheet } from "react-native";
 import Screen from "../components/Screen.js";
 import AppButton from "../components/AppButton.js";
-import { ListItem } from "../components/ListItem.js";
-import { getProducts } from "../components/ProductList.js";
+import { DecorationCard } from "../components/ItemCard/DecorationCard.js";
+import { getDecors } from "../components/CategoryList/DecorationList.js";
 import ListItemSeparator from "../components/ListItemSeparator.js";
 export function Decoration({ navigation }) {
-  function renderProduct({ item: product }) {
+  function renderDecor({ item: decor }) {
     return (
-      <ListItem
-        {...product}
+      <DecorationCard
+        {...decor}
         onPress={() => {
           navigation.navigate("ListingDetails", {
-            productId: product.id,
+            decorId: decor.id,
           });
         }}
       />
     );
   }
 
-  const [products, setProducts] = useState([]);
+  const [decors, setDecors] = useState([]);
 
   useEffect(() => {
-    setProducts(getProducts());
+    setDecors(getDecors());
   });
+
+  const [refresh, setRefresh] = useState(false);
+  const pullMe = () => {
+    setRefresh(true);
+
+    setTimeout(() => {
+      setRefresh(false);
+    }, 2000);
+  };
 
   return (
     <Screen style={styles.container}>
       <FlatList
         style={styles.listings}
         keyExtractor={(item) => item.id.toString()}
-        data={products}
-        renderItem={renderProduct}
+        data={decors}
+        renderItem={renderDecor}
+        refreshControl={
+          <RefreshControl refreshing={refresh} onRefresh={() => pullMe()} />
+        }
       />
 
       <ListItemSeparator />
@@ -48,10 +60,10 @@ const styles = StyleSheet.create({
     //marginVertical: 10,
   },
   container: {
-    backgroundColor: "#fff",
+    backgroundColor: "#C0C0C0",
   },
   listings: {
-    backgroundColor: "#fff",
+    backgroundColor: "#C0C0C0",
   },
   productsListContainer: {
     backgroundColor: "#FFA500",

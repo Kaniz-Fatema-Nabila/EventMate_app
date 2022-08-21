@@ -10,9 +10,11 @@ import { CartProvider } from "./app/components/CartContext.js";
 import ListItem from "./app/components/ListItem";
 import { Decoration } from "./app/screens/Decoration.js";
 import { NewsFeedScreen } from "./app/screens/NewsFeedScreen.js";
+import { Photography } from "./app/screens/Photography.js";
+import { Music } from "./app/screens/Music.js";
 
 export default function App() {
-  return <ListingScreen />;
+  return <NewsFeedScreen />;
 }
 
 // const Stack = createStackNavigator();

@@ -28,7 +28,7 @@ export function NewsFeed({ proImage, name, time, title, image, caption }) {
         >
           <View style={{ flexDirection: "row" }}>
             <TouchableOpacity>
-              <Icon name="heart-outline" size={28} />
+              <Icon name="heart-outline" size={29} />
             </TouchableOpacity>
 
             <TouchableOpacity>

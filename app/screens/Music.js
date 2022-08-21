@@ -1,38 +1,51 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, FlatList, ScrollView, StyleSheet } from "react-native";
+import { View, FlatList, RefreshControl, StyleSheet } from "react-native";
 import Screen from "../components/Screen.js";
 import AppButton from "../components/AppButton.js";
-import { ListItem } from "../components/ListItem.js";
-import { getProducts } from "../components/ProductList.js";
+import { MusicCard } from "../components/ItemCard/MusicCard.js";
+import { getMusics } from "../components/CategoryList/MusicList.js";
 import ListItemSeparator from "../components/ListItemSeparator.js";
 export function Music({ navigation }) {
-  function renderProduct({ item: product }) {
+  function renderMusic({ item: music }) {
     return (
-      <ListItem
-        {...product}
+      <MusicCard
+        {...music}
         onPress={() => {
           navigation.navigate("ListingDetails", {
-            productId: product.id,
+            musicId: music.id,
           });
         }}
       />
     );
   }
 
-  const [products, setProducts] = useState([]);
+  const [musics, setMusics] = useState([]);
 
   useEffect(() => {
-    setProducts(getProducts());
+    setMusics(getMusics());
   });
+
+  const [refresh, setRefresh] = useState(false);
+  const pullMe = () => {
+    setRefresh(true);
+
+    setTimeout(() => {
+      setRefresh(false);
+    }, 2000);
+  };
 
   return (
     <Screen style={styles.container}>
       <FlatList
         style={styles.listings}
         keyExtractor={(item) => item.id.toString()}
-        data={products}
-        renderItem={renderProduct}
+        data={musics}
+        renderItem={renderMusic}
+        refreshControl={
+          <RefreshControl refreshing={refresh} onRefresh={() => pullMe()} />
+        }
       />
+
       <ListItemSeparator />
       {/* <View style={styles.buttonsContainer}>
         <AppButton title="Order" onPress={() => navigation.navigate("Feed")} />
@@ -47,10 +60,10 @@ const styles = StyleSheet.create({
     //marginVertical: 10,
   },
   container: {
-    backgroundColor: "#fff",
+    backgroundColor: "#C0C0C0",
   },
   listings: {
-    backgroundColor: "#fff",
+    backgroundColor: "#C0C0C0",
   },
   productsListContainer: {
     backgroundColor: "#FFA500",
