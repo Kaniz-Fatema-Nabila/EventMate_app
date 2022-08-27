@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, StyleSheet } from "react-native";
+import { Button, StyleSheet, View, Text } from "react-native";
 import { Formik } from "formik";
 import * as Yup from "yup";
 //import AppForm from "../components/AppForm";
@@ -28,20 +28,13 @@ const categories = [
   { label: "Mehedi", value: 9 },
 ];
 
-function ListingEditScreen({props, navigation}) {
+function ListingEditScreen({ props, navigation }) {
   return (
     <Screen style={styles.container}>
-      {/* <AppForm
-        style={styles.button}
-        initialValues={{
-          title: "",
-          price: "",
-          description: "",
-          category: null,
-        }}
-        onSubmit={(values) => console.log(values)}
-        validationSchema={validationSchema}
-      > */}
+      <View style={styles.textContainer}>
+        <Text style={styles.text}>Add Service</Text>
+        <Text></Text>
+      </View>
       <Formik
         initialValues={{ email: " ", password: " " }}
         onSubmit={(values) => console.log(values)}
@@ -78,9 +71,9 @@ function ListingEditScreen({props, navigation}) {
 
             <SubmitButton title="Post" />
             <Button
-          title="Post tem"
-          onPress={() => navigation.navigate("Feed")}
-        />
+              title="Post tem"
+              onPress={() => navigation.navigate("UserFeed")}
+            />
           </>
         )}
       </Formik>
@@ -104,6 +97,16 @@ const styles = StyleSheet.create({
     padding: 0,
     marginVertical: 2,
     fontSize: 18,
+  },
+
+  text: {
+    fontSize: 20,
+    fontWeight: "bold",
+  },
+
+  textContainer: {
+    marginTop: 15,
+    marginLeft: 10,
   },
 });
 export default ListingEditScreen;

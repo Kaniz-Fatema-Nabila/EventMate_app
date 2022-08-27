@@ -1,5 +1,12 @@
 import React from "react";
-import { StyleSheet, View, Text, ImageBackground, Button } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Text,
+  ScrollView,
+  ImageBackground,
+  Button,
+} from "react-native";
 import Screen from "../components/Screen";
 import SubmitButton from "../components/SubmitButton";
 import AppFormField from "../components/AppFormField";
@@ -10,69 +17,70 @@ import AppButton from "../components/AppButton";
 const validationSchema = Yup.object().shape({
   date: Yup.string().required().label("Date"),
 });
-function CreateEventScreen({props, navigation}) {
+function CreateEventScreen({ props, navigation }) {
   return (
     <Screen style={styles.container}>
-      <Text style={styles.heading}>Create a New Event</Text>
+      <ScrollView>
+        <Text style={styles.heading}>Create a New Event</Text>
 
-      <Text style={styles.text}>
-        {" "}
-        Please fill in this form to create a new event{" "}
-      </Text>
-      <Text></Text>
-      <Text></Text>
-      <Text></Text>
+        <Text style={styles.text}>
+          {" "}
+          Please fill in this form to create a new event{" "}
+        </Text>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
 
-      <Formik
-        initialValues={{
-          date: " ",
-          time: " ",
-          location: " ",
-          guest: " ",
-          budget: " ",
-        }}
-        onSubmit={(values) => console.log(values)}
-        validationSchema={validationSchema}
-      >
-        {() => (
-          <>
-            <AppFormField
-              autoCapitalize="none"
-              name="date"
-              placeholder=" Date "
-            />
+        <Formik
+          initialValues={{
+            date: " ",
+            time: " ",
+            location: " ",
+            guest: " ",
+            budget: " ",
+          }}
+          onSubmit={(values) => console.log(values)}
+          validationSchema={validationSchema}
+        >
+          {() => (
+            <>
+              <AppFormField
+                autoCapitalize="none"
+                name="date"
+                placeholder=" Date "
+              />
 
-            <AppFormField
-              autoCapitalize="none"
-              name="time"
-              placeholder=" Time "
-            />
+              <AppFormField
+                autoCapitalize="none"
+                name="time"
+                placeholder=" Time "
+              />
 
-            <AppFormField
-              autoCapitalize="none"
-              name="location"
-              placeholder=" Location "
-            />
-            <AppFormField
-              autoCapitalize="none"
-              name="guest"
-              placeholder=" Max Guest No."
-            />
-            <AppFormField
-              autoCapitalize="none"
-              name="budget"
-              placeholder=" Budget "
-            />
+              <AppFormField
+                autoCapitalize="none"
+                name="location"
+                placeholder=" Location "
+              />
+              <AppFormField
+                autoCapitalize="none"
+                name="guest"
+                placeholder=" Max Guest No."
+              />
+              <AppFormField
+                autoCapitalize="none"
+                name="budget"
+                placeholder=" Budget "
+              />
 
-            
-            <SubmitButton style={styles.button} title="Submit" />
-            <Button
-          title="submit tem"
-          onPress={() => navigation.navigate("ServicesList")}
-        />
-          </>
-        )}
-      </Formik>
+              <SubmitButton style={styles.button} title="Submit" />
+              <Button
+                title="submit tem"
+                onPress={() => navigation.navigate("Listings")}
+              />
+            </>
+          )}
+        </Formik>
+      </ScrollView>
     </Screen>
   );
 }

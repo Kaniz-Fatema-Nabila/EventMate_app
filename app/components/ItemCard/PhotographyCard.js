@@ -7,22 +7,34 @@ import {
   TouchableHighlight,
 } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import AppText from "./AppText";
-import ListItemSeparator from "./ListItemSeparator";
-import { Colors } from "react-native/Libraries/NewAppScreen";
+import AppText from "../AppText";
 //import Swipeable from "react-native-gesture-handler/Swipeable";
 
-export function ListItem({ title, vendor, price, image, onPress }) {
+export function PhotographyCard({
+  title,
+  vendor,
+  price,
+  numPhotos,
+  time,
+  days,
+  image,
+  onPress,
+}) {
   return (
     // <Swipeable renderRightActions={renderRightActions}>
     <TouchableHighlight underlayColor={"#6e6969"} onPress={onPress}>
       <View style={styles.container}>
+        <AppText style={styles.title}>{title}</AppText>
         <Image style={styles.image} source={{ uri: image }} />
         <View style={styles.detailsContainer}>
-          <AppText style={styles.title}>{title}</AppText>
+          {/* <AppText style={styles.title}>{title}</AppText> */}
 
           <View
-            style={{ flexDirection: "row", justifyContent: "space-between" }}
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+              marginBottom: 5,
+            }}
           >
             <View>
               <AppText style={styles.vendor}>{vendor}</AppText>
@@ -41,10 +53,45 @@ export function ListItem({ title, vendor, price, image, onPress }) {
                 <MaterialCommunityIcons
                   name="comment-text"
                   style={{ color: "#FFA500" }}
-                  size={20}
+                  size={19}
                 />
                 <AppText style={styles.rating}> 5</AppText>
               </View>
+            </View>
+          </View>
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+              paddingLeft: 3,
+              paddingRight: 5,
+              paddingTop: 8,
+              paddingBottom: 5,
+            }}
+          >
+            <View style={{ flexDirection: "row" }}>
+              <MaterialCommunityIcons
+                name="camera"
+                style={{ color: "#FFA500" }}
+                size={20}
+              />
+              <AppText style={styles.text}> {numPhotos}</AppText>
+            </View>
+            <View style={{ flexDirection: "row" }}>
+              <MaterialCommunityIcons
+                name="clock"
+                style={{ color: "#FFA500" }}
+                size={20}
+              />
+              <AppText style={styles.text}> {time} hrs </AppText>
+            </View>
+            <View style={{ flexDirection: "row" }}>
+              <MaterialCommunityIcons
+                name="calendar"
+                style={{ color: "#FFA500" }}
+                size={21}
+              />
+              <AppText style={styles.text}> {days} days </AppText>
             </View>
           </View>
         </View>
@@ -68,6 +115,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     padding: 10,
   },
+  // thumb: {
+  //   height: 60,
+  //   borderRadius: 50,
+  //   width: "16%",
+  // },
   image: {
     width: "100%",
     height: 190,
@@ -82,6 +134,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     marginTop: 0,
     fontSize: 20,
+    padding: 10,
   },
   vendor: {
     color: "#000",
@@ -90,4 +143,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ListItem;
+export default PhotographyCard;

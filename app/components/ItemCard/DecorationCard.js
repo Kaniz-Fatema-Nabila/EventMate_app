@@ -7,20 +7,18 @@ import {
   TouchableHighlight,
 } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import AppText from "./AppText";
-import ListItemSeparator from "./ListItemSeparator";
+import AppText from "../AppText";
 import { Colors } from "react-native/Libraries/NewAppScreen";
 //import Swipeable from "react-native-gesture-handler/Swipeable";
 
-export function ListItem({ title, vendor, price, image, onPress }) {
+export function DecorationCard({ title, vendor, price, image, onPress }) {
   return (
     // <Swipeable renderRightActions={renderRightActions}>
     <TouchableHighlight underlayColor={"#6e6969"} onPress={onPress}>
       <View style={styles.container}>
+        <AppText style={styles.title}>{title}</AppText>
         <Image style={styles.image} source={{ uri: image }} />
         <View style={styles.detailsContainer}>
-          <AppText style={styles.title}>{title}</AppText>
-
           <View
             style={{ flexDirection: "row", justifyContent: "space-between" }}
           >
@@ -80,8 +78,8 @@ const styles = StyleSheet.create({
   title: {
     color: "#000",
     fontWeight: "bold",
-    marginTop: 0,
     fontSize: 20,
+    padding: 10,
   },
   vendor: {
     color: "#000",
@@ -90,4 +88,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ListItem;
+export default DecorationCard;
