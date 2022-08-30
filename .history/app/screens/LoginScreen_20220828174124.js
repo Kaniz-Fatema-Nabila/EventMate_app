@@ -188,7 +188,7 @@ function LoginScreen({ props, navigation }) {
                 title="Testing API"
               /> */}
             <SubmitButton title="Login" />
-            <Button title="Login tem" onPress={() => navigation.navigate("UserFeed")} />
+            <Button title="Login tem" onPress={() => navigation.navigate("Feed")} />
 
 
 

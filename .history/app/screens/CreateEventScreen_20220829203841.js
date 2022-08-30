@@ -13,7 +13,7 @@ import AppFormField from "../components/AppFormField";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import AppButton from "../components/AppButton";
-import CartNavigator from "../Navigation/CartNavigator";
+// import CartNavigator from "../Navigation/CartNavigator";
 
 const validationSchema = Yup.object().shape({
   date: Yup.string().required().label("Date"),
@@ -72,7 +72,7 @@ function CreateEventScreen({ props, navigation }) {
                 name="budget"
                 placeholder=" Budget "
               />
-              {/* <CartNavigator /> */}
+              <CartNavigator />
               <SubmitButton style={styles.button} title="Submit" />
               <Button
                 title="submit tem"

@@ -200,7 +200,9 @@ export function ListingScreen({ navigation }) {
           /> 
         </View> */}
       <ListItemSeparator />
-
+      <View style={styles.buttonsContainer}>
+        <AppButton title="Order" onPress={() => navigation.navigate("Feed")} />
+      </View>
     </Screen>
   );
 }

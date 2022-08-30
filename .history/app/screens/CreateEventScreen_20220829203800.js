@@ -72,7 +72,7 @@ function CreateEventScreen({ props, navigation }) {
                 name="budget"
                 placeholder=" Budget "
               />
-              {/* <CartNavigator /> */}
+              <CartNavigator />
               <SubmitButton style={styles.button} title="Submit" />
               <Button
                 title="submit tem"

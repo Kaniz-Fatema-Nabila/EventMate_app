@@ -150,7 +150,7 @@ import { View, FlatList, RefreshControl, StyleSheet } from "react-native";
 import Screen from "../components/Screen.js";
 import AppButton from "../components/AppButton.js";
 import ListItem from "../components/ListItem.js";
-import { getProducts } from "../components/ProductList.js";
+import getProducts from "../components/ProductList.js";
 import ListItemSeparator from "../components/ListItemSeparator.js";
 export function ListingScreen({ navigation }) {
   function renderProduct({ item: product }) {
@@ -200,7 +200,9 @@ export function ListingScreen({ navigation }) {
           /> 
         </View> */}
       <ListItemSeparator />
-
+      <View style={styles.buttonsContainer}>
+        <AppButton title="Order" onPress={() => navigation.navigate("Feed")} />
+      </View>
     </Screen>
   );
 }

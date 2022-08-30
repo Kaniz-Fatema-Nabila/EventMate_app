@@ -3,9 +3,6 @@ import { View, Text, FlatList, StyleSheet } from "react-native";
 import AppButton from "../components/AppButton";
 import { CartContext } from "../components/CartContext";
 import Screen from "../components/Screen";
-
-
-
 export function Cart({ navigation }) {
   const { items, getItemsCount, getTotalPrice } = useContext(CartContext);
 
@@ -41,10 +38,6 @@ export function Cart({ navigation }) {
         renderItem={renderItem}
         keyExtractor={(item) => item.product.id.toString()}
         ListFooterComponent={Totals}
-      />
-      <AppButton
-        title="Confirm Order"
-        onPress={() => navigation.navigate("UserFeed")}
       />
     </Screen>
   );

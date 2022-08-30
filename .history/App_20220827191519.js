@@ -8,7 +8,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import AuthNavigator from "./app/Navigation/AuthNavigator";
 import Screen from "./app/components/Screen";
-// import ListingDetailsScreen from "./app/components/ListingDetailsScreen";
+import ListingDetailsScreen from "./app/components/ListingDetailsScreen";
 import FilterScreen from "./app/screens/FilterScreen";
 import Drawer from "./app/components/Drawer";
 // export default function App() {
@@ -80,42 +80,74 @@ import Drawer from "./app/components/Drawer";
 //   </Tab.Navigator>
 // );
 
-// export default function App() {
-//   return (
-// <AccountScreen />
-// <ListingDetailsScreen/>
-// <NavigationContainer>
-//   <AuthNavigator />
-// </NavigationContainer>
-// <FilterScreen />
-// <LoginScreen />
-// <Drawer />
-// );
-
-import { ListingScreen } from "./app/screens/ListingScreen.js";
-import { ListingDetailsScreen } from "./app/screens/ListingDetailsScreen.js";
-import { Cart } from "./app/screens/Cart.js";
-import { CartIcon } from "./app/components/CartIcon.js";
-import { CartProvider } from "./app/components/CartContext.js";
-import ListItem from "./app/components/ListItem";
-import { Decoration } from "./app/screens/Decoration.js";
-import { NewsFeedScreen } from "./app/screens/NewsFeedScreen.js";
-import { Photography } from "./app/screens/Photography.js";
-import { Music } from "./app/screens/Music.js";
-import CartNavigator from "./app/Navigation/CartNavigator";
-
-//   export default function App() {
-//     return <NewsFeedScreen />;
-
-// }
-
-const Stack = createStackNavigator();
 export default function App() {
   return (
+    // <AccountScreen />
+    // <ListingDetailsScreen/>
     <NavigationContainer>
       <AuthNavigator />
-      {/* <CartNavigator /> */}
     </NavigationContainer>
+    // <FilterScreen />
+    // <LoginScreen />
+    // <Drawer />
   );
+
+  // import { ListingScreen } from "./app/screens/ListingScreen.js";
+  // import { ListingDetailsScreen } from "./app/screens/ListingDetailsScreen.js";
+  // import { Cart } from "./app/screens/Cart.js";
+  // import { CartIcon } from "./app/components/CartIcon.js";
+  // import { CartProvider } from "./app/components/CartContext.js";
+  // import ListItem from "./app/components/ListItem";
+  // import { Decoration } from "./app/screens/Decoration.js";
+  // import { NewsFeedScreen } from "./app/screens/NewsFeedScreen.js";
+  // import { Photography } from "./app/screens/Photography.js";
+  // import { Music } from "./app/screens/Music.js";
+
+  // export default function App() {
+  //   return <NewsFeedScreen />;
+
 }
 
+// const Stack = createStackNavigator();
+// export default function App() {
+//   return (
+//     <CartProvider>
+//       <NavigationContainer>
+//         <Stack.Navigator>
+//           <Stack.Screen
+//             name="Products"
+//             component={ListingScreen}
+//             options={({ navigation }) => ({
+//               title: "Products",
+//               headerTitleStyle: styles.headerTitle,
+//               headerRight: () => <CartIcon navigation={navigation} />,
+//             })}
+//           />
+//           <Stack.Screen
+//             name="ListingDetails"
+//             component={ListingDetailsScreen}
+//             options={({ navigation }) => ({
+//               title: "Product details",
+//               headerTitleStyle: styles.headerTitle,
+//               headerRight: () => <CartIcon navigation={navigation} />,
+//             })}
+//           />
+//           <Stack.Screen
+//             name="Cart"
+//             component={Cart}
+//             options={({ navigation }) => ({
+//               title: "My cart",
+//               headerTitleStyle: styles.headerTitle,
+//               headerRight: () => <CartIcon navigation={navigation} />,
+//             })}
+//           />
+//         </Stack.Navigator>
+//       </NavigationContainer>
+//     </CartProvider>
+//   );
+// }
+// const styles = StyleSheet.create({
+//   headerTitle: {
+//     fontSize: 20,
+//   },
+// });

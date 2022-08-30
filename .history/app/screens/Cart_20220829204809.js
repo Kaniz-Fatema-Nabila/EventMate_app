@@ -43,8 +43,8 @@ export function Cart({ navigation }) {
         ListFooterComponent={Totals}
       />
       <AppButton
-        title="Confirm Order"
-        onPress={() => navigation.navigate("UserFeed")}
+        title="Register A Vendor"
+        onPress={() => navigation.navigate("VendorRegistration")}
       />
     </Screen>
   );

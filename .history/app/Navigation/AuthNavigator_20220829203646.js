@@ -12,8 +12,7 @@ import { ListingDetailsScreen } from "../screens/ListingDetailsScreen.js";
 import { Cart } from "../screens/Cart.js";
 import { CartProvider } from "../components/CartContext.js";
 import { CartIcon } from "../components/CartIcon.js";
-import { StyleSheet } from "react-native";
-
+import CartNavigator from "./CartNavigator";
 
 
 const Stack = createStackNavigator();
@@ -36,7 +35,9 @@ const AuthNavigator = () => (
         name="VendorRegistration"
         component={VendorRegistrationScreen}
       />
-      <Stack.Screen
+      <CartNavigator />
+
+      {/* <Stack.Screen
         name="Products"
         component={ListingScreen}
         options={({ navigation }) => ({
@@ -44,8 +45,8 @@ const AuthNavigator = () => (
           headerTitleStyle: styles.headerTitle,
           headerRight: () => <CartIcon navigation={navigation} />,
         })}
-      />
-      <Stack.Screen
+      /> */}
+      {/* <Stack.Screen
         name="ListingDetails"
         component={ListingDetailsScreen}
         options={({ navigation }) => ({
@@ -53,8 +54,8 @@ const AuthNavigator = () => (
           headerTitleStyle: styles.headerTitle,
           headerRight: () => <CartIcon navigation={navigation} />,
         })}
-      />
-      <Stack.Screen
+      /> */}
+      {/* <Stack.Screen
         name="Cart"
         component={Cart}
         options={({ navigation }) => ({
@@ -62,9 +63,7 @@ const AuthNavigator = () => (
           headerTitleStyle: styles.headerTitle,
           headerRight: () => <CartIcon navigation={navigation} />,
         })}
-      />
-
-
+      /> */}
     </Stack.Navigator>
     {/* </NavigationContainer> */}
   </CartProvider>
@@ -72,12 +71,6 @@ const AuthNavigator = () => (
 );
 
 export default AuthNavigator;
-
-const styles = StyleSheet.create({
-  headerTitle: {
-    fontSize: 20,
-  },
-});
 
 //     <CartProvider>
 //       <NavigationContainer>

@@ -112,10 +112,44 @@ import CartNavigator from "./app/Navigation/CartNavigator";
 const Stack = createStackNavigator();
 export default function App() {
   return (
+    // <CartProvider>
     <NavigationContainer>
-      <AuthNavigator />
-      {/* <CartNavigator /> */}
+      <CartNavigator />
+      {/* <Stack.Navigator>
+          <Stack.Screen
+            name="Products"
+            component={ListingScreen}
+            options={({ navigation }) => ({
+              title: "Products",
+              headerTitleStyle: styles.headerTitle,
+              headerRight: () => <CartIcon navigation={navigation} />,
+            })}
+          />
+          <Stack.Screen
+            name="ListingDetails"
+            component={ListingDetailsScreen}
+            options={({ navigation }) => ({
+              title: "Product details",
+              headerTitleStyle: styles.headerTitle,
+              headerRight: () => <CartIcon navigation={navigation} />,
+            })}
+          />
+          <Stack.Screen
+            name="Cart"
+            component={Cart}
+            options={({ navigation }) => ({
+              title: "My cart",
+              headerTitleStyle: styles.headerTitle,
+              headerRight: () => <CartIcon navigation={navigation} />,
+            })}
+          />
+        </Stack.Navigator> */}
     </NavigationContainer>
+    // </CartProvider>
   );
 }
-
+const styles = StyleSheet.create({
+  headerTitle: {
+    fontSize: 20,
+  },
+});

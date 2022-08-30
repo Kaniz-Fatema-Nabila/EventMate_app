@@ -4,7 +4,7 @@ import AppButton from "../components/AppButton";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from "axios";
 
-// import AppNavigator from "../Navigation/AppNavigator";
+import AppNavigator from "../Navigation/AppNavigator";
 
 function UserFeed({ props, navigation }) {
   const [token, setToken] = useState("");
@@ -45,7 +45,7 @@ function UserFeed({ props, navigation }) {
           onPress={() => navigation.navigate("VendorRegistration")}
         />
       </View>
-      {/* <AppNavigator /> */}
+      <AppNavigator />
     </ImageBackground>
   );
 }

@@ -102,7 +102,6 @@ import { Decoration } from "./app/screens/Decoration.js";
 import { NewsFeedScreen } from "./app/screens/NewsFeedScreen.js";
 import { Photography } from "./app/screens/Photography.js";
 import { Music } from "./app/screens/Music.js";
-import CartNavigator from "./app/Navigation/CartNavigator";
 
 //   export default function App() {
 //     return <NewsFeedScreen />;
@@ -112,10 +111,43 @@ import CartNavigator from "./app/Navigation/CartNavigator";
 const Stack = createStackNavigator();
 export default function App() {
   return (
-    <NavigationContainer>
-      <AuthNavigator />
-      {/* <CartNavigator /> */}
-    </NavigationContainer>
+    <CartProvider>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen
+            name="Products"
+            component={ListingScreen}
+            options={({ navigation }) => ({
+              title: "Products",
+              headerTitleStyle: styles.headerTitle,
+              headerRight: () => <CartIcon navigation={navigation} />,
+            })}
+          />
+          <Stack.Screen
+            name="ListingDetails"
+            component={ListingDetailsScreen}
+            options={({ navigation }) => ({
+              title: "Product details",
+              headerTitleStyle: styles.headerTitle,
+              headerRight: () => <CartIcon navigation={navigation} />,
+            })}
+          />
+          <Stack.Screen
+            name="Cart"
+            component={Cart}
+            options={({ navigation }) => ({
+              title: "My cart",
+              headerTitleStyle: styles.headerTitle,
+              headerRight: () => <CartIcon navigation={navigation} />,
+            })}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </CartProvider>
   );
 }
-
+const styles = StyleSheet.create({
+  headerTitle: {
+    fontSize: 20,
+  },
+});

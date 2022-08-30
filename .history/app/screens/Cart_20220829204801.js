@@ -3,6 +3,7 @@ import { View, Text, FlatList, StyleSheet } from "react-native";
 import AppButton from "../components/AppButton";
 import { CartContext } from "../components/CartContext";
 import Screen from "../components/Screen";
+import AppButton from "../components/AppButton";
 
 
 
@@ -43,8 +44,8 @@ export function Cart({ navigation }) {
         ListFooterComponent={Totals}
       />
       <AppButton
-        title="Confirm Order"
-        onPress={() => navigation.navigate("UserFeed")}
+        title="Register A Vendor"
+        onPress={() => navigation.navigate("VendorRegistration")}
       />
     </Screen>
   );

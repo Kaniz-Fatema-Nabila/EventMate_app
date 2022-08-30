@@ -33,11 +33,11 @@ async function login(values, navigation) {
     // const navigate = useNavigation()
 
     // const response = await axios.get('https://jsonplaceholder.typicode.com/todos/1', {
-    // const response = await axios.post('http://192.168.0.105:8000/api/login', values
-    const response = await axios.post('http://192.168.0.102:8000/api/login', {
-      email: "mahirpunna@gmail.com",
-      password: "z",
-    }
+    const response = await axios.post('http://192.168.0.105:8000/api/login', values
+      // const response = await axios.post('http://192.168.0.104:8000/api/login' ,{
+      //   email:"mahirpunna@gmail.com",
+      //   password:"z",
+      // }
     );
     // if (response.status === 201) {
     //   alert(` You have created: ${JSON.stringify(response.data)}`);
@@ -59,7 +59,7 @@ async function login(values, navigation) {
     await AsyncStorage.setItem("token", JSON.stringify(token));
     // await AsyncStorage.setItem("userData", username);
 
-    navigation.navigate("UserFeed")
+    navigation.navigate("Feed")
 
   } catch (error) {
     alert("An error has occurred");
@@ -188,7 +188,7 @@ function LoginScreen({ props, navigation }) {
                 title="Testing API"
               /> */}
             <SubmitButton title="Login" />
-            <Button title="Login tem" onPress={() => navigation.navigate("UserFeed")} />
+            <Button title="Login tem" onPress={() => navigation.navigate("Feed")} />
 
 
 

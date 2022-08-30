@@ -59,7 +59,7 @@ async function login(values, navigation) {
     await AsyncStorage.setItem("token", JSON.stringify(token));
     // await AsyncStorage.setItem("userData", username);
 
-    navigation.navigate("UserFeed")
+    // navigation.navigate("UserFeed")
 
   } catch (error) {
     alert("An error has occurred");
@@ -188,7 +188,7 @@ function LoginScreen({ props, navigation }) {
                 title="Testing API"
               /> */}
             <SubmitButton title="Login" />
-            <Button title="Login tem" onPress={() => navigation.navigate("UserFeed")} />
+            <Button title="Login tem" onPress={() => navigation.navigate("Feed")} />
 
 
 

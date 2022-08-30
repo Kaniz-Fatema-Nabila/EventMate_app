@@ -113,8 +113,8 @@ const Stack = createStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <AuthNavigator />
-      {/* <CartNavigator /> */}
+      <CartNavigator />
+
     </NavigationContainer>
   );
 }

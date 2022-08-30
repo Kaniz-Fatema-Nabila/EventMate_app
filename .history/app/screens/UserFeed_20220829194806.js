@@ -33,7 +33,12 @@ function UserFeed({ props, navigation }) {
       style={styles.background}
       source={require("../assets/bg2.jpg")}
     >
-      <Text style={styles.heading}>[token] </Text>
+      {/* <<<<<<< HEAD:app/screens/Feed.js */}
+      {/* <Text style={styles.heading}>{name} </Text> */}
+      {/* <Text style={styles.heading}>{token} </Text> */}
+      {/* ======= */}
+      <Text style={styles.heading}>{token} </Text>
+      {/* >>>>>>> 6735c050ceabd4da0075e8fcd459e1aa8d7e25d6:app/screens/UserFeed.js */}
 
       <View style={styles.buttonsContainer}>
         <AppButton
@@ -66,7 +71,11 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlignVertical: "top",
     textAlign: "center",
+    // <<<<<<< HEAD:app/screens/Feed.js
+    //     color: "#000"
+    // =======
     color: "#000",
+    // >>>>>>> 6735c050ceabd4da0075e8fcd459e1aa8d7e25d6:app/screens/UserFeed.js
   },
 });
 
