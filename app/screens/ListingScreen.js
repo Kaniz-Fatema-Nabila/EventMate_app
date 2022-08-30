@@ -46,12 +46,6 @@ export function ListingScreen({ navigation }) {
         }
       />
 
-      {/* <View style={styles.buttonsContainer}>
-          <AppButton
-            title="Order"
-            onPress={() => navigation.navigate("Feed")}
-          /> 
-        </View> */}
       <ListItemSeparator />
       <View style={styles.buttonsContainer}>
         <AppButton title="Order" onPress={() => navigation.navigate("Feed")} />
@@ -69,10 +63,10 @@ const styles = StyleSheet.create({
     backgroundColor: "#eeeeee",
   },
   listings: {
-    backgroundColor: "#eeeeee",
+    backgroundColor: "#fff",
   },
   productsListContainer: {
-    //backgroundColor: "#FFA500",
+    backgroundColor: "#FFA500",
     paddingVertical: 8,
     marginHorizontal: 8,
   },

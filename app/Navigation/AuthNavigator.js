@@ -22,7 +22,7 @@ const AuthNavigator = () => (
     <Stack.Screen name="Sign Up" component={UserRegistrationScreen} />
     <Stack.Screen name="UserFeed" component={UserFeed} />
     <Stack.Screen name="CreateEvent" component={CreateEventScreen} />
-    <Stack.Screen name="Listings" component={ListingScreen} />
+    {/* <Stack.Screen name="Listings" component={ListingScreen} /> */}
     <Stack.Screen
       name="VendorRegistration"
       component={VendorRegistrationScreen}

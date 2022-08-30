@@ -62,7 +62,7 @@ const onSubmitFormHandler = async (event) => {
     setIsLoading(false);
   }
 };
-function LoginScreen({ props, navigation }) {
+export function LoginScreen({ props, navigation }) {
   // function LoginScreen({ navigation }) {
   return (
     // <ImageBackground

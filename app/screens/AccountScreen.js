@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, View, FlatList, Text } from "react-native";
-import ListItem from "../components/ListItem";
+import ListingItem from "../components/ListingItem";
 import ListItemSeparator from "../components/ListItemSeparator";
 import Icon from "../components/Icon";
 import Screen from "../components/Screen";
@@ -28,7 +28,7 @@ function AccountScreen(navigation) {
     <Screen style={styles.screen}>
       {/* <Text>Hello</Text> */}
       <View style={styles.container}>
-        <ListItem
+        <ListingItem
           title="Kaniz Fatema"
           subTitle="kaniz.fatema@gmail.com"
           image={require("../assets/starlights.jpg")}
@@ -40,7 +40,7 @@ function AccountScreen(navigation) {
           keyExtractor={(menuItem) => menuItem.title}
           ItemSeparatorComponent={ListItemSeparator}
           renderItem={({ item }) => (
-            <ListItem
+            <ListingItem
               title={item.title}
               IconComponent={
                 <Icon
@@ -53,7 +53,7 @@ function AccountScreen(navigation) {
           )}
         />
       </View>
-      <ListItem
+      <ListingItem
         title="Log Out"
         IconComponent={<Icon name="logout" backgroundColor="#ffe66d" />}
       />

@@ -11,10 +11,19 @@ import ListItem from "./app/components/ListItem";
 import { Decoration } from "./app/screens/Decoration.js";
 import { NewsFeedScreen } from "./app/screens/NewsFeedScreen.js";
 import { Photography } from "./app/screens/Photography.js";
+import { AccountScreen } from "./app/screens/AccountScreen.js";
 import { Music } from "./app/screens/Music.js";
+import AccountNavigator from "./app/Navigation/AccountNavigator";
+import AuthNavigator from "./app/Navigation/AuthNavigator.js";
+import FeedNavigator from "./app/Navigation/FeedNavigator.js";
+import AppNavigator from "./app/Navigation/AppNavigator";
 
 export default function App() {
-  return <NewsFeedScreen />;
+  return (
+    <NavigationContainer>
+      <AppNavigator />
+    </NavigationContainer>
+  );
 }
 
 // const Stack = createStackNavigator();
