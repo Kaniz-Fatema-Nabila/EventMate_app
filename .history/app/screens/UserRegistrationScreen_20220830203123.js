@@ -1,23 +1,33 @@
 import React from "react";
-import { StyleSheet, View, Text, ImageBackground } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Text,
+  ScrollView,
+  ImageBackground,
+  TouchableHighlight,
+  Button,
+} from "react-native";
 import * as Yup from "yup";
 import Screen from "../components/Screen";
 import SubmitButton from "../components/SubmitButton";
 import AppFormField from "../components/AppFormField";
 import { Formik } from "formik";
+import AppButton from "../components/AppButton";
 
 const validationSchema = Yup.object().shape({
   // name:Yup.string().required().name().label("Name*"),
   email: Yup.string().required().email().label("Email*"),
   password: Yup.string().required().min(4).label("Password*"),
 });
-function UserRegistrationScreen(props) {
+function UserRegistrationScreen({ props, navigation }) {
   return (
-    <ImageBackground
-      style={styles.background}
-      source={require("../assets/lightbg.jpg")}
-    >
-      <Screen style={styles.container}>
+    // <ImageBackground
+    //   style={styles.background}
+    //   source={require("../assets/lightbg.jpg")}
+    // >
+    <Screen style={styles.container}>
+      <ScrollView>
         <Text style={styles.heading}> Sign up </Text>
         <Text></Text>
         <Text style={styles.text}>
@@ -34,7 +44,6 @@ function UserRegistrationScreen(props) {
             dob: " ",
             address: " ",
             contact: " ",
-            nid: " ",
           }}
           onSubmit={(values) => console.log(values)}
           validationSchema={validationSchema}
@@ -76,26 +85,43 @@ function UserRegistrationScreen(props) {
                 name="contact"
                 placeholder="Contact No."
               />
-              <AppFormField
-                autoCapitalize="none"
-                name="nid"
-                placeholder="NID No."
-              />
 
               {/* <ErrorMessage error={errors.password} visible={touched.password}/> */}
-              <SubmitButton title="Sign up" />
+              {/* <SubmitButton title="Sign up" />
+              <Button
+                title="Signup tem"
+                onPress={() => navigation.navigate("Login")}
+              /> */}
+              <AppButton
+                title="Sign Up"
+                onPress={() => navigation.navigate("Welcome")}
+              />
+              <TouchableHighlight
+                style={styles.buttonContainer}
+                onPress={() => this.onClickListener("login")}
+              >
+                <Text style={styles.text}>Already a member? Login</Text>
+              </TouchableHighlight>
             </>
           )}
         </Formik>
-        <Text style={styles.text}> Already a member? Login </Text>
-      </Screen>
-    </ImageBackground>
+      </ScrollView>
+    </Screen>
+    /* </ImageBackground> */
   );
 }
 const styles = StyleSheet.create({
-  background: {
-    flex: 1,
+  // background: {
+  //   flex: 1,
+  //   alignItems: "center",
+  // },
+  buttonContainer: {
+    height: 50,
+    flexDirection: "column",
+    justifyContent: "center",
     alignItems: "center",
+    width: "100%",
+    borderRadius: 30,
   },
   container: {
     padding: 30,

@@ -71,7 +71,7 @@ const AuthNavigator = () => (
         options={({ navigation }) => ({
           title: "Confirm Order",
           headerTitleStyle: styles.headerTitle,
-          // headerRight: () => <CartIcon navigation={navigation} />,
+          headerRight: () => <CartIcon navigation={navigation} />,
 
         })}
       />

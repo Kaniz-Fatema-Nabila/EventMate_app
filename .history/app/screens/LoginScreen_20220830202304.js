@@ -190,7 +190,7 @@ function LoginScreen({ props, navigation }) {
             {/* <SubmitButton title="Login" onPress={() => navigation.navigate("UserFeed")} /> */}
             {/* <Button title="Login tem" onPress={() => navigation.navigate("UserFeed")} /> */}
             <AppButton
-              title="Login"
+              title="Register A Vendor"
               onPress={() => navigation.navigate("UserFeed")}
             />
 

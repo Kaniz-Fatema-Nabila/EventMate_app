@@ -87,10 +87,14 @@ function UserRegistrationScreen({ props, navigation }) {
               />
 
               {/* <ErrorMessage error={errors.password} visible={touched.password}/> */}
-              <SubmitButton title="Sign up" />
+              {/* <SubmitButton title="Sign up" />
               <Button
                 title="Signup tem"
                 onPress={() => navigation.navigate("Login")}
+              /> */}
+              <AppButton
+                title="Sign Up"
+                onPress={() => navigation.navigate("Welcome")}
               />
               <TouchableHighlight
                 style={styles.buttonContainer}

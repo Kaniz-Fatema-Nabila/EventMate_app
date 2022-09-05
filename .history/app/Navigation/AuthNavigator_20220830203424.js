@@ -69,9 +69,9 @@ const AuthNavigator = () => (
         name="ConfirmOrder"
         component={ConfirmOrderScreen}
         options={({ navigation }) => ({
-          title: "Confirm Order",
+          title: "My cart",
           headerTitleStyle: styles.headerTitle,
-          // headerRight: () => <CartIcon navigation={navigation} />,
+          headerRight: () => <CartIcon navigation={navigation} />,
 
         })}
       />
