@@ -80,7 +80,7 @@ function CreateEventScreen({ props, navigation }) {
               /> */}
               <AppButton
                 title="Create Event"
-                onPress={() => navigation.navigate("Products")}
+                onPress={() => navigation.navigate("VendorRegistration")}
               />
             </>
           )}

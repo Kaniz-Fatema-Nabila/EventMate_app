@@ -16,7 +16,7 @@ import { Formik } from "formik";
 import axios from "axios";
 import AppButton from "../components/AppButton";
 import * as Keychain from "react-native-keychain";
-import AsyncStorage from "@react-native-async-storage/async-storage";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 // import { NavigationActions } from "react-navigation";
 // import { useNavigation } from '@react-navigation/native';
@@ -29,26 +29,27 @@ const validationSchema = Yup.object().shape({
 // <<<<<<< HEAD
 async function login(values, navigation) {
   try {
-    console.log("in");
+    console.log("in")
     // const navigate = useNavigation()
 
     // const response = await axios.get('https://jsonplaceholder.typicode.com/todos/1', {
     // const response = await axios.post('http://192.168.0.105:8000/api/login', values
-    const response = await axios.post("http://192.168.0.102:8000/api/login", {
+    const response = await axios.post('http://192.168.0.102:8000/api/login', {
       email: "mahirpunna@gmail.com",
       password: "z",
-    });
+    }
+    );
     // if (response.status === 201) {
     //   alert(` You have created: ${JSON.stringify(response.data)}`);
     // } else {
 
     //   throw new Error("An error has occurred");
     // }
-    const name = response.data.data.name;
-    const token = response.data.token;
-    console.log(name);
-    console.log(token);
-    const username = "zuck";
+    const name = response.data.data.name
+    const token = response.data.token
+    console.log(name)
+    console.log(token)
+    const username = 'zuck';
     // const password = 'poniesRgr8';
 
     // await Keychain.setGenericPassword(name, token);
@@ -58,10 +59,11 @@ async function login(values, navigation) {
     await AsyncStorage.setItem("token", JSON.stringify(token));
     // await AsyncStorage.setItem("userData", username);
 
-    navigation.navigate("UserFeed");
+    navigation.navigate("UserFeed")
+
   } catch (error) {
     alert("An error has occurred");
-    console.log(error);
+    console.log(error)
     // YellowBox.ignoreWarnings(['Warning: ...']);
   }
   // try {
@@ -186,11 +188,15 @@ function LoginScreen({ props, navigation }) {
                 title="Testing API"
               /> */}
             {/* <SubmitButton title="Login" onPress={() => navigation.navigate("UserFeed")} /> */}
-            {/* <Button title="Login tem" onPress={() => navigation.navigate("UserFeed")} /> */}
+            <Button title="Login tem" onPress={() => navigation.navigate("UserFeed")} />
             <AppButton
-              title="Login"
+              title="Register A Vendor"
               onPress={() => navigation.navigate("UserFeed")}
             />
+
+
+
+
 
             <TouchableHighlight
               style={styles.buttonContainer}
