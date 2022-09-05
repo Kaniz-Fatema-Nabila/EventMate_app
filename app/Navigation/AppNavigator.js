@@ -33,7 +33,7 @@ const AppNavigator = () => (
         ),
       }}
     />
-    <Tab.Screen
+    {/* <Tab.Screen
       name="Profile"
       component={AccountNavigator}
       options={{
@@ -42,7 +42,7 @@ const AppNavigator = () => (
           <MaterialCommunityIcons name="account" color={color} size={size} />
         ),
       }}
-    />
+    /> */}
   </Tab.Navigator>
 );
 

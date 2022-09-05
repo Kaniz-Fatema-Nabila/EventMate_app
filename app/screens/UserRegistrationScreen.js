@@ -87,7 +87,10 @@ function UserRegistrationScreen({ props, navigation }) {
               />
 
               {/* <ErrorMessage error={errors.password} visible={touched.password}/> */}
-              <SubmitButton title="Sign up" />
+              <SubmitButton
+                title="Sign up"
+                // onPress={() => navigation.navigate("Login")}
+              />
               <Button
                 title="Signup tem"
                 onPress={() => navigation.navigate("Login")}

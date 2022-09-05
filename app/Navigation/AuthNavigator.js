@@ -7,7 +7,7 @@ import UserFeed from "../screens/UserFeed";
 import CreateEventScreen from "../screens/CreateEventScreen";
 import VendorRegistrationScreen from "../screens/VendorRegistrationScreen";
 import WelcomeScreen from "../screens/WelcomeScreen";
-import ListingScreen from "../screens/ListingScreen";
+import { ListingScreen } from "../screens/ListingScreen";
 import { ListingDetailsScreen } from "../screens/ListingDetailsScreen.js";
 import { Cart } from "../screens/Cart.js";
 import { CartProvider } from "../components/CartContext.js";
