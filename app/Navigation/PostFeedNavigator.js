@@ -1,14 +1,11 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-
-import AppNavigator from "./AppNavigator";
-import CartNavigator from "./CartNavigator";
-import NewsFeedScreen from "../screens/NewsFeedScreen";
+import { NewsFeedScreen } from "../screens/NewsFeedScreen";
 import AccountNavigator from "./AccountNavigator";
+import { SavedPostScreen } from "../screens/SavedPostScreen";
 import CreateEventScreen from "../screens/CreateEventScreen";
-import { createNavigator } from "react-navigation";
-import { ListingScreen } from "../screens/ListingScreen";
+import EventList from "../screens/EventList";
 
 const Tab = createBottomTabNavigator();
 
@@ -25,9 +22,8 @@ const PostFeedNavigator = () => (
     />
     <Tab.Screen
       name="List of Events"
-      component={ListingScreen}
+      component={EventList}
       options={{
-        headerShown: false,
         tabBarIcon: ({ color, size }) => (
           <MaterialCommunityIcons
             name="wallet-giftcard"
@@ -38,10 +34,9 @@ const PostFeedNavigator = () => (
       }}
     />
     <Tab.Screen
-      name="Create an Event"
+      name="Create Event"
       component={CreateEventScreen}
       options={{
-        headerShown: false,
         tabBarIcon: ({ color, size }) => (
           <MaterialCommunityIcons
             name="plus-circle"
@@ -51,11 +46,10 @@ const PostFeedNavigator = () => (
         ),
       }}
     />
-    {/* <Tab.Screen
-      name="Event Saved"
-      component={AppNavigator}
+    <Tab.Screen
+      name="Saved"
+      component={SavedPostScreen}
       options={{
-        headerShown: false,
         tabBarIcon: ({ color, size }) => (
           <MaterialCommunityIcons
             name="content-save-edit-outline"
@@ -64,9 +58,9 @@ const PostFeedNavigator = () => (
           />
         ),
       }}
-    /> */}
+    />
     <Tab.Screen
-      name="Profile"
+      name="Account"
       component={AccountNavigator}
       options={{
         headerShown: false,

@@ -7,33 +7,31 @@ import Screen from "../components/Screen";
 
 const menuItems = [
   {
-    title: "My Listings",
+    title: "Momtahina's Birthday",
     icon: {
-      name: "format-list-bulleted",
-      backgroundColor: "#000",
+      name: "cake-variant-outline",
+      backgroundColor: "#FFA500",
     },
   },
   {
-    title: "My Messages",
+    title: "Farida's Wedding",
     icon: {
-      name: "email",
+      name: "ring",
       backgroundColor: "#FFA500",
     },
-    targetScreen: "Messages",
+  },
+  {
+    title: "Mahir's Party",
+    icon: {
+      name: "party-popper",
+      backgroundColor: "#FFA500",
+    },
   },
 ];
 
-function AccountScreen({ navigation }) {
+function EventList(navigation) {
   return (
     <Screen style={styles.screen}>
-      {/* <Text>Hello</Text> */}
-      <View style={styles.container}>
-        <ListingItem
-          title="Kaniz Fatema"
-          subTitle="kaniz.fatema@gmail.com"
-          image={require("../assets/starlights.jpg")}
-        />
-      </View>
       <View style={styles.container}>
         <FlatList
           data={menuItems}
@@ -48,16 +46,10 @@ function AccountScreen({ navigation }) {
                   backgroundColor={item.icon.backgroundColor}
                 />
               }
-              onPress={() => navigation.navigate(item.targetScreen)}
             />
           )}
         />
       </View>
-      <ListingItem
-        title="Log Out"
-        IconComponent={<Icon name="logout" backgroundColor="#ffe66d" />}
-        onPress={() => navigation.navigate("Welcome")}
-      />
     </Screen>
   );
 }
@@ -71,4 +63,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default AccountScreen;
+export default EventList;

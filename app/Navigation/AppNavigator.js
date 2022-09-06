@@ -4,7 +4,6 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import ListingEditScreen from "../screens/ListingEditScreen";
 import FeedNavigator from "./FeedNavigator";
-import AccountNavigator from "./AccountNavigator";
 
 const Tab = createBottomTabNavigator();
 

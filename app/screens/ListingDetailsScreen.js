@@ -8,7 +8,7 @@ import AppButton from "../components/AppButton";
 import { getProduct } from "../components/ProductList";
 import { CartContext } from "../components/CartContext";
 
-export function ListingDetailsScreen({ route }) {
+function ListingDetailsScreen({ route }) {
   const { productId } = route.params;
   const [product, setProduct] = useState({});
 
