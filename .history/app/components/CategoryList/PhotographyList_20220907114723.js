@@ -8,7 +8,7 @@ const PHOTOS = [
     time: "5",
     days: "15-20",
     image:
-      "https://images.shiksha.com/mediadata/images/articles/1568193656phpmWI2xq.jpeg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvX-CKO5-NMHummnWPU1ygOoUtPj1z894JDxJ17L-o&s",
     description: "Decoration stage for wedding",
   },
   {
@@ -32,7 +32,7 @@ const PHOTOS = [
     time: "5",
     days: "15-20",
     image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvX-CKO5-NMHummnWPU1ygOoUtPj1z894JDxJ17L-o&s",
+      "https://www.mezzapica.com.au/wp-content/uploads/2019/06/mezzapica_240519_web_012.jpg",
     description: "Cake for special ocassion",
   },
 ];

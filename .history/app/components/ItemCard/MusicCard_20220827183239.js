@@ -7,11 +7,20 @@ import {
   TouchableHighlight,
 } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+
 import AppText from "../AppText";
-import { Colors } from "react-native/Libraries/NewAppScreen";
 //import Swipeable from "react-native-gesture-handler/Swipeable";
 
-export function DecorationCard({ title, vendor, description, price, image, onPress }) {
+export function MusicCard({
+  title,
+  vendor,
+  price,
+  max_songs,
+  time,
+  djs,
+  image,
+  onPress,
+}) {
   return (
     // <Swipeable renderRightActions={renderRightActions}>
     <TouchableHighlight underlayColor={"#6e6969"} onPress={onPress}>
@@ -19,12 +28,17 @@ export function DecorationCard({ title, vendor, description, price, image, onPre
         <AppText style={styles.title}>{title}</AppText>
         <Image style={styles.image} source={{ uri: image }} />
         <View style={styles.detailsContainer}>
+          {/* <AppText style={styles.title}>{title}</AppText> */}
+
           <View
-            style={{ flexDirection: "row", justifyContent: "space-between" }}
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+              marginBottom: 5,
+            }}
           >
             <View>
               <AppText style={styles.vendor}>{vendor}</AppText>
-              {/* <AppText style={styles.vendor}>{description}</AppText> */}
               <AppText style={styles.price}>TK {price}</AppText>
             </View>
             <View style={{ flexDirection: "column" }}>
@@ -40,10 +54,45 @@ export function DecorationCard({ title, vendor, description, price, image, onPre
                 <MaterialCommunityIcons
                   name="comment-text"
                   style={{ color: "#FFA500" }}
-                  size={20}
+                  size={19}
                 />
                 <AppText style={styles.rating}> 5</AppText>
               </View>
+            </View>
+          </View>
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+              paddingLeft: 3,
+              paddingRight: 5,
+              paddingTop: 8,
+              paddingBottom: 5,
+            }}
+          >
+            <View style={{ flexDirection: "row" }}>
+              <MaterialCommunityIcons
+                name="playlist-music"
+                style={{ color: "#FFA500" }}
+                size={25}
+              />
+              <AppText style={styles.text}> {max_songs}</AppText>
+            </View>
+            <View style={{ flexDirection: "row" }}>
+              <MaterialCommunityIcons
+                name="clock"
+                style={{ color: "#FFA500" }}
+                size={20}
+              />
+              <AppText style={styles.text}> {time} hrs </AppText>
+            </View>
+            <View style={{ flexDirection: "row" }}>
+              <MaterialCommunityIcons
+                name="account-multiple"
+                style={{ color: "#FFA500" }}
+                size={21}
+              />
+              <AppText style={styles.text}> {djs} person </AppText>
             </View>
           </View>
         </View>
@@ -56,7 +105,7 @@ export function DecorationCard({ title, vendor, description, price, image, onPre
 const styles = StyleSheet.create({
   container: {
     borderRadius: 10,
-    backgroundColor: "#fff",
+    backgroundColor: "#808080",
     marginBottom: 10,
     marginRight: 13,
     marginLeft: 13,
@@ -67,6 +116,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     padding: 10,
   },
+  // thumb: {
+  //   height: 60,
+  //   borderRadius: 50,
+  //   width: "16%",
+  // },
   image: {
     width: "100%",
     height: 190,
@@ -79,8 +133,8 @@ const styles = StyleSheet.create({
   title: {
     color: "#000",
     fontWeight: "bold",
-    fontSize: 20,
     padding: 10,
+    fontSize: 20,
   },
   vendor: {
     color: "#000",
@@ -89,4 +143,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default DecorationCard;
+export default MusicCard;

@@ -48,50 +48,45 @@ const DecorationList = ({ navigation }) => {
         </View>
     );
 
-    //     return (
-    //         <DrawerLayoutAndroid
-    //             ref={drawer}
-    //             drawerWidth={300}
-    //             drawerPosition={"left"}
-    //             renderNavigationView={navigationView}
-    //             style={styles.drawer}
-    //         >
-    //             <View style={styles.container}>
-    //                 <Button
-    //                     title="Filter"
-    //                     // onPress={() => drawer.current.openDrawer()}
-    //                     onPress={() => navigation.navigate("Login")}
-
-    //                     style={styles.btn}
-    //                 // color="#fff"
-    //                 />
-
-    //                 {/* <View onPress={() => drawer.current.openDrawer()}><Text style={{ color: "#fff" }}>Filter</Text></View> */}
-    //                 <View style={{ flex: 1, alignItems: "center", justifyContent: "center", backgroundColor: 'white' }}>
-    //                     {/* <Text style={{ color: "#006600", fontSize: 40 }}>Profile Screen!</Text>
-    //                     <Ionicons name="ios-person-circle-outline" size={80} color="#006600" /> */}
-    //                     {/* <Screen>
-    //                         <FlatList
-    //                             style={styles.listings}
-    //                             keyExtractor={(item) => item.id.toString()}
-    //                             data={products}
-    //                             renderItem={renderProduct}
-    //                             refreshControl={
-    //                                 <RefreshControl refreshing={refresh} onRefresh={() => pullMe()} />
-    //                             }
-    //                         />
-
-    //                     </Screen> */}
-    // <Decoration/>
-    //                 </View>
-    //             </View>
-    //         </DrawerLayoutAndroid>
-
-    //     );
-
     return (
+        <DrawerLayoutAndroid
+            ref={drawer}
+            drawerWidth={300}
+            drawerPosition={"left"}
+            renderNavigationView={navigationView}
+            style={styles.drawer}
+        >
+            <View style={styles.container}>
+                <Button
+                    title="Filter"
+                    // onPress={() => drawer.current.openDrawer()}
+                    onPress={() => navigation.navigate("Login")}
 
-        <Decoration />
+                    style={styles.btn}
+                // color="#fff"
+                />
+
+                {/* <View onPress={() => drawer.current.openDrawer()}><Text style={{ color: "#fff" }}>Filter</Text></View> */}
+                <View style={{ flex: 1, alignItems: "center", justifyContent: "center", backgroundColor: 'white' }}>
+                    {/* <Text style={{ color: "#006600", fontSize: 40 }}>Profile Screen!</Text>
+                    <Ionicons name="ios-person-circle-outline" size={80} color="#006600" /> */}
+                    {/* <Screen>
+                        <FlatList
+                            style={styles.listings}
+                            keyExtractor={(item) => item.id.toString()}
+                            data={products}
+                            renderItem={renderProduct}
+                            refreshControl={
+                                <RefreshControl refreshing={refresh} onRefresh={() => pullMe()} />
+                            }
+                        />
+                        
+                    </Screen> */}
+                    <Decoration />
+                </View>
+            </View>
+        </DrawerLayoutAndroid>
+
     );
 };
 

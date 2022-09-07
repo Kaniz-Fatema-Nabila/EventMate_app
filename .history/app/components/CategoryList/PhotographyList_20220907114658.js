@@ -8,7 +8,7 @@ const PHOTOS = [
     time: "5",
     days: "15-20",
     image:
-      "https://images.shiksha.com/mediadata/images/articles/1568193656phpmWI2xq.jpeg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvX-CKO5-NMHummnWPU1ygOoUtPj1z894JDxJ17L-o&s",
     description: "Decoration stage for wedding",
   },
   {
@@ -20,7 +20,7 @@ const PHOTOS = [
     time: "5",
     days: "15-20",
     image:
-      "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2020/9/AJ/BG/YW/24829239/x4cart-star-string-lights-for-indoor-outdoor-home-party-decoration-500x500.jpg",
     description: "String lights, fairy lights",
   },
   {
@@ -32,7 +32,7 @@ const PHOTOS = [
     time: "5",
     days: "15-20",
     image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvX-CKO5-NMHummnWPU1ygOoUtPj1z894JDxJ17L-o&s",
+      "https://www.mezzapica.com.au/wp-content/uploads/2019/06/mezzapica_240519_web_012.jpg",
     description: "Cake for special ocassion",
   },
 ];

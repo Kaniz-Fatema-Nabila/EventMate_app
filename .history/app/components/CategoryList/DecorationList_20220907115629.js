@@ -1,29 +1,29 @@
 const DECOR = [
   {
     id: 1,
-    title: "Wedding decoration",
+    title: "Decoration 1",
     vendor: "Mahir Sadman's Company",
     price: 45000,
     image:
-      "https://i.pinimg.com/originals/f1/00/e2/f100e27841fb4af6aab49bece5335deb.jpg",
+      "https://img.staticmb.com/mbcontent//images/uploads/2022/5/wedding%20stage%20decoration.jpg",
     description: "Decoration stage for wedding",
   },
   {
     id: 2,
-    title: "Brthday decoration",
+    title: "Decoration 2",
     vendor: "Momtahina Bushra's Company",
     price: 300,
     image:
-      "https://i.pinimg.com/originals/3e/6d/f9/3e6df9de3cf650eea88af6d0bf9063af.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2020/9/AJ/BG/YW/24829239/x4cart-star-string-lights-for-indoor-outdoor-home-party-decoration-500x500.jpg",
     description: "String lights, fairy lights",
   },
   {
     id: 3,
-    title: "Proposal decoration",
+    title: "Decoration 3",
     vendor: "Farida Mim's Company",
     price: 1900,
     image:
-      "https://media-exp2.licdn.com/dms/image/C4E12AQGSW7G6pGslsg/article-inline_image-shrink_1000_1488/0/1633069867199?e=1662595200&v=beta&t=vy0e2j4OijeTiamiRgPyLDBHxhSABtAGzOH393xL0cw",
+      "https://www.mezzapica.com.au/wp-content/uploads/2019/06/mezzapica_240519_web_012.jpg",
     description: "Cake for special ocassion",
   },
 ];

@@ -11,7 +11,7 @@ import AppText from "../AppText";
 import { Colors } from "react-native/Libraries/NewAppScreen";
 //import Swipeable from "react-native-gesture-handler/Swipeable";
 
-export function DecorationCard({ title, vendor, description, price, image, onPress }) {
+export function DecorationCard({ title, vendor, price, image, onPress }) {
   return (
     // <Swipeable renderRightActions={renderRightActions}>
     <TouchableHighlight underlayColor={"#6e6969"} onPress={onPress}>
@@ -24,7 +24,6 @@ export function DecorationCard({ title, vendor, description, price, image, onPre
           >
             <View>
               <AppText style={styles.vendor}>{vendor}</AppText>
-              {/* <AppText style={styles.vendor}>{description}</AppText> */}
               <AppText style={styles.price}>TK {price}</AppText>
             </View>
             <View style={{ flexDirection: "column" }}>
@@ -56,7 +55,7 @@ export function DecorationCard({ title, vendor, description, price, image, onPre
 const styles = StyleSheet.create({
   container: {
     borderRadius: 10,
-    backgroundColor: "#fff",
+    backgroundColor: "#808080",
     marginBottom: 10,
     marginRight: 13,
     marginLeft: 13,

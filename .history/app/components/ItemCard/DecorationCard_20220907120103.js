@@ -24,7 +24,7 @@ export function DecorationCard({ title, vendor, description, price, image, onPre
           >
             <View>
               <AppText style={styles.vendor}>{vendor}</AppText>
-              {/* <AppText style={styles.vendor}>{description}</AppText> */}
+              <AppText style={styles.vendor}>{description}</AppText>
               <AppText style={styles.price}>TK {price}</AppText>
             </View>
             <View style={{ flexDirection: "column" }}>

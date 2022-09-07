@@ -5,7 +5,7 @@ import AppButton from "../components/AppButton.js";
 import { MusicCard } from "../components/ItemCard/MusicCard.js";
 import { getMusics } from "../components/CategoryList/MusicList.js";
 import ListItemSeparator from "../components/ListItemSeparator.js";
-export default function Music({ navigation }) {
+export function Music({ navigation }) {
   function renderMusic({ item: music }) {
     return (
       <MusicCard

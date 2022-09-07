@@ -2,27 +2,27 @@ import React, { useEffect, useState } from "react";
 import { View, FlatList, RefreshControl, StyleSheet } from "react-native";
 import Screen from "../components/Screen.js";
 import AppButton from "../components/AppButton.js";
-import { MusicCard } from "../components/ItemCard/MusicCard.js";
-import { getMusics } from "../components/CategoryList/MusicList.js";
+import { PhotographyCard } from "../components/ItemCard/PhotographyCard.js";
+import { getPhotos } from "../components/CategoryList/PhotographyList.js";
 import ListItemSeparator from "../components/ListItemSeparator.js";
-export default function Music({ navigation }) {
-  function renderMusic({ item: music }) {
+export function Photography({ navigation }) {
+  function renderPhoto({ item: photo }) {
     return (
-      <MusicCard
-        {...music}
+      <PhotographyCard
+        {...photo}
         onPress={() => {
           navigation.navigate("ListingDetails", {
-            musicId: music.id,
+            photoId: photo.id,
           });
         }}
       />
     );
   }
 
-  const [musics, setMusics] = useState([]);
+  const [photos, setPhotos] = useState([]);
 
   useEffect(() => {
-    setMusics(getMusics());
+    setPhotos(getPhotos());
   });
 
   const [refresh, setRefresh] = useState(false);
@@ -39,8 +39,8 @@ export default function Music({ navigation }) {
       <FlatList
         style={styles.listings}
         keyExtractor={(item) => item.id.toString()}
-        data={musics}
-        renderItem={renderMusic}
+        data={photos}
+        renderItem={renderPhoto}
         refreshControl={
           <RefreshControl refreshing={refresh} onRefresh={() => pullMe()} />
         }
